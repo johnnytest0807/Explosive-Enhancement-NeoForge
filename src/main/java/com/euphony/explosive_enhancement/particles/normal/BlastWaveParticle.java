@@ -30,11 +30,9 @@ public class BlastWaveParticle extends AbstractExplosiveParticle {
 
     @Override
     public void extract(QuadParticleRenderState submittable, Camera camera, float tickProgress) {
-        Quaternionf quaternionf = new Quaternionf();
-        //quaternionf.rotationX(0); // rotate 90 degrees to be horizontal
-        //this.extractRotatedQuad(submittable, camera, quaternionf, tickProgress);
-        //quaternionf.rotateYXZ(HUNDRED_EIGHTY_DEGREES, 0, 0); // flip upside down to be seen from beneath
-        this.extractRotatedQuad(submittable, camera, quaternionf, tickProgress);
+        // We skip the mod's custom "extractRotatedQuad" 
+        // and use the standard Minecraft method that forces camera-facing.
+        super.extract(submittable, camera, tickProgress);
     }
 
     @Override
