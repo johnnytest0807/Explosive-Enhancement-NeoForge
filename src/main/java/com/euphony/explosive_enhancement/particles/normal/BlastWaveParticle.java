@@ -31,7 +31,7 @@ public class BlastWaveParticle extends AbstractExplosiveParticle {
     @Override
     public void extract(QuadParticleRenderState submittable, Camera camera, float tickProgress) {
         Quaternionf quaternionf = new Quaternionf();
-        quaternionf.rotationX(NINETY_DEGREES); // rotate 90 degrees to be horizontal
+        quaternionf.rotationX(); // rotate 90 degrees to be horizontal
         this.extractRotatedQuad(submittable, camera, quaternionf, tickProgress);
         quaternionf.rotateYXZ(HUNDRED_EIGHTY_DEGREES, 0, 0); // flip upside down to be seen from beneath
         this.extractRotatedQuad(submittable, camera, quaternionf, tickProgress);
