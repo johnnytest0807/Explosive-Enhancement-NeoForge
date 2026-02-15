@@ -41,6 +41,14 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+      - name: Build Mod
+        run: ./gradlew build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MyModifiedMod
+          path: build/libs/*.jar
 
       - name: Build And Release
         env:
