@@ -25,7 +25,7 @@ public class BlastWaveParticle extends AbstractExplosiveParticle {
             SpriteSet spriteProvider
     ) {
         super(world, x, y, z, velX, velY, velZ, params.getScale(), params.isEmissive(), spriteProvider);
-        this.lifetime = (int) (15 + (Math.floor(this.quadSize / 5)));
+        this.lifetime = (int) (35 + (Math.floor(this.quadSize / 5)));
     }
 
     @Override
